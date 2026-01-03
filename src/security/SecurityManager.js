@@ -1,6 +1,18 @@
 /**
  * SecurityManager - Ultra-secure asset protection
  * Handles encryption, authentication, and secure storage
+ * 
+ * ⚠️ IMPORTANT SECURITY NOTICE ⚠️
+ * This is a DEMONSTRATION/PROTOTYPE implementation showing the API structure
+ * and design patterns for a crypto trading platform.
+ * 
+ * The following features require full production implementation before real use:
+ * 1. API Key Verification - Currently simplified, needs HMAC-SHA256 verification
+ * 2. Transaction Signing - Currently uses simple hashing, needs ECDSA/Ed25519
+ * 3. Transaction Verification - Currently basic check, needs proper crypto verification
+ * 
+ * DO NOT USE IN PRODUCTION WITHOUT IMPLEMENTING PROPER CRYPTOGRAPHIC FUNCTIONS.
+ * See inline TODO comments for detailed implementation requirements.
  */
 
 const crypto = require('crypto');

@@ -5,6 +5,10 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 [![Node.js](https://img.shields.io/badge/node-%3E%3D18.0.0-brightgreen.svg)](https://nodejs.org/)
 
+## ⚠️ Important Notice
+
+**This is a demonstration/prototype implementation** showcasing the architecture and features of a next-generation crypto trading platform. Some security-critical functions (API key verification, transaction signing) are simplified for demonstration purposes and include detailed TODO comments for production implementation. **Do not use with real funds without implementing full production-grade security.** See [Security Documentation](docs/SECURITY.md) for details.
+
 ## ✨ Features
 
 ### ⚡ Lightning-Fast Execution

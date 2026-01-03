@@ -125,7 +125,7 @@ class Utils {
    */
   static sharpeRatio(returns, riskFreeRate = 0.02) {
     const avgReturn = returns.reduce((a, b) => a + b, 0) / returns.length;
-    const stdDev = this.standardDeviation(returns);
+    const stdDev = Utils.standardDeviation(returns);
     return (avgReturn - riskFreeRate) / stdDev;
   }
 }
