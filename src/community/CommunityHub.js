@@ -28,7 +28,7 @@ class CommunityHub {
     ];
     
     for (const trader of sampleTraders) {
-      const id = `TRADER-${Math.random().toString(36).substr(2, 9)}`;
+      const id = `TRADER-${Math.random().toString(36).substring(2, 11)}`;
       this.traders.set(id, {
         id,
         ...trader,
