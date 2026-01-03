@@ -218,7 +218,7 @@ class CommunityHub {
   }
 
   getUserName(userId) {
-    return `User-${userId.substr(0, 8)}`;
+    return `User-${userId.substring(0, 8)}`;
   }
 
   getStatus() {

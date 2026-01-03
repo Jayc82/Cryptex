@@ -58,7 +58,7 @@ class TradingEngine extends EventEmitter {
   async placeOrder(order) {
     const startTime = process.hrtime.bigint();
     
-    const orderId = `ORD-${Date.now()}-${Math.random().toString(36).substr(2, 9)}`;
+    const orderId = `ORD-${Date.now()}-${Math.random().toString(36).substring(2, 11)}`;
     const fullOrder = {
       id: orderId,
       ...order,

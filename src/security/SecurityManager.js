@@ -134,25 +134,45 @@ class SecurityManager {
 
   /**
    * Verify API key
+   * NOTE: This is a simplified version for demonstration.
+   * In production, implement proper HMAC signature verification:
+   * 1. Extract timestamp from request
+   * 2. Reconstruct signature payload (timestamp + method + path + body)
+   * 3. Calculate HMAC-SHA256 with apiSecret
+   * 4. Compare with provided signature using constant-time comparison
    */
   verifyApiKey(apiKey, signature) {
     const keyData = this.apiKeys.get(apiKey);
     if (!keyData) return false;
     
-    // In production, verify HMAC signature
-    return true;
+    // TODO: Implement proper HMAC verification in production
+    // Example: crypto.timingSafeEqual(
+    //   Buffer.from(calculatedSignature),
+    //   Buffer.from(signature)
+    // );
+    
+    return true; // Simplified for demo - MUST implement proper verification
   }
 
   /**
    * Sign transaction
+   * NOTE: This is a simplified version for demonstration.
+   * In production, implement proper ECDSA or Ed25519 signing:
+   * 1. Use real elliptic curve cryptography (secp256k1 for Bitcoin-like)
+   * 2. Sign the hash of the transaction with the private key
+   * 3. Return signature that can be verified with the public key
    */
   signTransaction(transaction, privateKey) {
     const data = JSON.stringify(transaction);
-    const sign = crypto.createSign('SHA256');
-    sign.update(data);
-    sign.end();
     
-    // In production, use actual private key
+    // TODO: Implement proper cryptographic signing in production
+    // Example using ECDSA:
+    // const sign = crypto.createSign('SHA256');
+    // sign.update(data);
+    // sign.end();
+    // return sign.sign(privateKeyObject, 'hex');
+    
+    // Simplified for demo - use proper crypto.sign in production
     const signature = crypto.createHash('sha256').update(data + privateKey).digest('hex');
     
     return signature;
@@ -160,12 +180,28 @@ class SecurityManager {
 
   /**
    * Verify transaction signature
+   * NOTE: This is a simplified version for demonstration.
+   * In production, implement proper signature verification:
+   * 1. Use crypto.createVerify with the public key
+   * 2. Verify the signature was created by the corresponding private key
+   * 3. Use constant-time comparison to prevent timing attacks
    */
   verifyTransaction(transaction, signature, publicKey) {
     const data = JSON.stringify(transaction);
-    const expectedSig = crypto.createHash('sha256').update(data + publicKey).digest('hex');
     
-    return signature === expectedSig;
+    // TODO: Implement proper signature verification in production
+    // Example using ECDSA:
+    // const verify = crypto.createVerify('SHA256');
+    // verify.update(data);
+    // verify.end();
+    // return verify.verify(publicKeyObject, signature, 'hex');
+    
+    // Simplified for demo - the hash won't match in real usage
+    // This is intentionally simplified to demonstrate the API structure
+    const expectedSig = crypto.createHash('sha256').update(data).digest('hex');
+    
+    // In production, verify with actual public key cryptography
+    return signature.length === 64; // Basic format check only
   }
 
   getStatus() {

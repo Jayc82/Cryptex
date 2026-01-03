@@ -74,9 +74,15 @@ const isValid = securityManager.verifyApiKey(apiKey, signature);
 - ✅ AES-256-GCM encryption
 - ✅ PBKDF2 password hashing
 - ✅ Secure wallet generation
-- ✅ Transaction signing
-- ✅ API key management
-- ✅ HMAC authentication
+- ✅ Transaction signing (API structure - see note below)
+- ✅ API key management (API structure - see note below)
+
+### ⚠️ Important Note for Production Use
+Some security functions in the current implementation provide API structure and demonstration code only:
+- **API Key Verification**: Currently simplified - requires full HMAC-SHA256 signature verification in production
+- **Transaction Signing/Verification**: Uses simplified hashing - requires proper ECDSA or Ed25519 implementation for production
+
+These are marked with detailed TODO comments in the code explaining proper implementation requirements.
 
 ### Ready for Integration
 - 🔄 2FA (TOTP)
