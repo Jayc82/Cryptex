@@ -1,0 +1,17 @@
+{
+  "name": "cryptex",
+  "version": "1.0.0",
+  "description": "The ultimate crypto trading platform combining lightning-fast execution, ultra-low fees, and advanced AI-driven insights — empowering traders to maximize profits with unmatched speed, security, and precision.",
+  "main": "src/index.js",
+  "scripts": {
+    "start": "node src/index.js",
+    "dev": "node --watch src/index.js",
+    "test": "node --test tests/**/*.test.js"
+  },
+  "keywords": ["crypto", "trading", "blockchain", "ai", "security"],
+  "author": "",
+  "license": "MIT",
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}
